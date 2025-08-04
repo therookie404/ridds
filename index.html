@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dear Ridsss</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #4b2c2c;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 30px;
+      background-image: url('https://images.unsplash.com/photo-1534850336045-c6c6d287f89e?auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    h1 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 3rem;
+      color: #ff69b4;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 3px white;
+    }
+
+    .poem-box {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 700px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
+
+    .motivation {
+      font-style: italic;
+      color: #a0522d;
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #ffb6c1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: #ff69b4;
+    }
+
+    audio {
+      margin-top: 20px;
+      width: 80%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hey Ridsss 🌸</h1>
+  <div class="poem-box" id="poemBox"></div>
+  <p class="motivation" id="motivation"></p>
+
+  <button onclick="loadRandom()">Show Me Something Beautiful</button>
+  <button onclick="showHope()">I'm Feeling Low 💭</button>
+
+  <audio controls autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_79b0dbd31e.mp3?filename=calm-background-110566.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const stories = [
+      {
+        text: `I know I've walked too far
+But when I look at the path
+It still remains the same from the start
+I don’t know where my brightness is
+What I know is I have to cross this darkness on my own
+Maybe thinking of the past is making me feel like I did not come this far
+But excitement of the future is still making me roam the path
+Maybe I got distracted while moving ahead
+But all the distractions dropped me at the exact position where I belong
+Not knowing where to go ahead
+But I can see a tinge of light waiting for me to see the whole new world ahead.`,
+        message: "Sometimes, we lose sight of how far we've come, Ridsss. But your words reflect the light that’s always been within you. Even in darkness, you shine gently forward — just like you always do."
+      },
+      {
+        text: `No matter how much we want to hold onto something
+But what is supposed to get slipped out will get our hold off
+We may feel like we're losing everything in life
+But never ever let go of that little hope
+Hope that stays in your heart and lights up like the golden hour of sunset
+We may see darkness all over the place
+But we can identify the obstacles if we want to fight back
+Struggle is what makes a person stronger and a fighter
+And not giving up is the sign of it
+So let’s get up and fight back
+Because no darkness can defeat us if we have faith and hope within ourselves.`,
+        message: "Hope flickers quietly, but your words fan its flame. You remind us that strength isn't loud — it whispers, keeps going, and blooms again. You are that strength, Ridsss."
+      },
+      {
+        text: `Recently, life taught me that sometimes, the less you know, the better.
+Life's smooth, how it manipulated me to leave what I love the most,
+It showed me that the smaller your circle is, the more comfortable you become.
+The less you worry, the happier you are.
+Life has taken a turn where I no longer feel a sense of belonging.
+I try to find the right road to take, only to realize there's no such thing as the "right" road.
+You have to create your own path,
+A path where you belong,
+Where there's no fear of judgment, no sense of being out of place,
+A place you can truly call your own.
+It's important to build that comfort space,
+Somewhere you can retreat when life is too harsh for too long.
+Because life will keep throwing you deeper and deeper into the well.
+And it's you who will have to climb out, again and again.
+That's how you overcome life,
+By rising every time, and becoming the version of yourself you truly want to be.`,
+        message: "Ridsss, your words build sanctuaries — not just for you, but for anyone who's ever felt lost. You're not just surviving life’s turns; you're carving a beautiful, brave path out of them."
+      }
+    ];
+
+    function loadRandom() {
+      const random = stories[Math.floor(Math.random() * stories.length)];
+      document.getElementById('poemBox').innerText = random.text;
+      document.getElementById('motivation').innerText = random.message;
+    }
+
+    function showHope() {
+      const hopeful = stories[1]; // most uplifting one
+      document.getElementById('poemBox').innerText = hopeful.text;
+      document.getElementById('motivation').innerText = hopeful.message;
+    }
+
+    window.onload = loadRandom;
+  </script>
+
+</body>
+</html>
